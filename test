@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+//输出1~100之间的奇数
+int main(int argc, char const *argv[])
+{
+    int a=0;
+    while(a++<100)
+    {
+        if(a%2==1)
+            printf("%d\t",a);
+    }
+    // for (int i = 1; i <= 100; i++)
+    // {
+    //     if(i%2==1)
+    //     {
+    //         printf("%d\t",i);
+    //     }
+    // }
+    
+    return 0;
+}
