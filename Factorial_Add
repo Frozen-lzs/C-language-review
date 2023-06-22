@@ -1,0 +1,28 @@
+/*
+    计算1！+2！+3！+...+N！
+*/
+#include <stdio.h>
+
+int Factorial_Add(int N)
+{
+    int sum = 0, ret = 1;
+    for (int i = 1; i <= N; i++)
+    {
+        ret *= i;
+        sum += ret;
+    }
+    return sum;
+}
+
+int main(int argc, char const *argv[])
+{
+    int a = 0;
+
+    printf("计算1!+2!+3!+...+N!,请输入N值:");
+    scanf("%d", &a);
+    while (getchar() != '\n');
+
+    printf("%d\n", Factorial_Add(a));
+
+    return 0;
+}
