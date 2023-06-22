@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int Factorial(int N)
+{
+    int sum = 1;
+    for (int i = 1; i <= N; i++)
+    {
+        sum *= i;
+    }
+    return sum;
+}
+
+int main(int argc, char const *argv[])
+{
+    int a = 0;
+    printf("计算N的阶乘，请输入N值：");
+    scanf("%d", &a);
+    while (getchar() != '\n');
+
+    printf("%d\n", Factorial(a));
+
+    return 0;
+}
