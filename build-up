@@ -1,0 +1,31 @@
+/*
+    编写代码，演示多个字符从两端到中间之间展示的过程
+    原句：hello
+    实际：h***o
+         he*lo
+         hello
+*/
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(int argc, char const *argv[])
+{
+    char msg[] = "Study hard and make progress every day!";
+    char tmp[] = "***************************************";
+    int left=0;
+    int right=strlen(msg)-1;//不算结束符，最后一个元素的下标
+
+    while (left<=right)
+    {
+        system("clear");
+        tmp[left] = msg[left];
+        tmp[right] = msg[right];
+        printf("%s\n",tmp);
+        left++;
+        right--;
+        sleep(1); 
+    }
+
+    return 0;
+}
