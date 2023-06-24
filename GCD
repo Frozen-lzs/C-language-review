@@ -1,0 +1,74 @@
+/*求两个数之间最大公约数（Greatest Common Divisor，GCD）
+  也称最大公因数（Highest Common Factor，HCF）*/
+#include <stdio.h>
+
+// 方法一，直接硬算
+/*
+    函数名字：GCD
+    函数参数：需要计算公约数的两个数
+    其返回值：返回最大公约数，若某数为零或负数返回-1
+*/
+int GCD(int x, int y)
+{
+    int tmp = 0;
+
+    // 判断数字是否合法
+    if (x <= 0 || y <= 0)
+    {
+        return -1;
+    }
+
+    // 如果两数相等，最大公约数必定是自己
+    if (x == y)
+    {
+        return x;
+    }
+    else
+    {
+        tmp = x < y ? x : y;
+    }
+
+    // 若两数不相等，从最小的数开始暴力匹配
+    for (int i = tmp; i >= 1; i--)
+    {
+        if (x % i == 0 && y % i == 0)
+        {
+            return i;
+        }
+    }
+}
+
+// 方法二，辗转相除法
+/*
+    函数名字：Euclidean_Algorithm
+    函数参数：需要计算公约数的两个数
+    其返回值：返回最大公约数，若某数为零或负数返回-1
+*/
+int Euclidean_Algorithm(int x, int y)
+{
+    int tmp = 0;
+    // 判断数字是否合法
+    if (x <= 0 || y <= 0)
+    {
+        return -1;
+    }
+
+    while (tmp = x % y)
+    {
+        x = y;
+        y = tmp;
+    }
+    return y;
+}
+
+int main(int argc, char const *argv[])
+{
+    // int a=16,b=8;
+    int a, b, r;
+    printf("请输入两个正整数：");
+    scanf("%d%d", &a, &b);
+    printf("%d\n", GCD(a, b));
+    printf("%d\n", Euclidean_Algorithm(a, b));
+
+    return 0;
+}
