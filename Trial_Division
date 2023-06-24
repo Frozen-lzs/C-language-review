@@ -1,4 +1,4 @@
-/*质数prime*/
+/*判断是否为质数 prime*/
 #include <stdio.h>
 #include <stdbool.h>
 #include <math.h>
