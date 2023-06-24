@@ -18,13 +18,13 @@ int main(int argc, char const *argv[])
 
     while (left<=right)
     {
-        system("clear");
+        system("clear");//清空屏幕上的所有内容
         tmp[left] = msg[left];
         tmp[right] = msg[right];
         printf("%s\n",tmp);
         left++;
         right--;
-        sleep(1); 
+        sleep(1); //减慢展示的速度
     }
 
     return 0;
