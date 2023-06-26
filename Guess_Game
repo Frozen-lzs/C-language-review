@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
             break;
         case 2:
             printf("我们下次见\n");
-            break;
+            return;
         default:
             printf("请输入有效数字!\n");
             break;
