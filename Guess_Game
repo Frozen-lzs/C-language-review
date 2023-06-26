@@ -1,0 +1,70 @@
+/*猜数，随机生成某数，根据*/
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void Guess_Game()
+{
+    int num = 0, guess = -1;
+    int left = 1, right = 100;
+    srand((unsigned)time(0));
+    num = rand() % 100 + 1;
+    // printf("%d\n", num);
+    printf("开始游戏\n");
+
+    while (1)
+    {
+        printf("请猜一个数字,按0退出游戏：");
+        scanf("%d", &guess);
+        while (getchar() != '\n');
+
+        if (guess < num)
+        {
+            left = guess + 1;
+            printf("小了小了，再猜猜[%d,%d]\n", left, right);
+        }
+        else if (guess > num)
+        {
+            right = guess - 1;
+            printf("大了大了，再猜猜[%d,%d]\n", left, right);
+        }
+        else if (guess == num)
+        {
+            printf("恭喜你猜对了\n");
+            return;
+        }
+        else if (guess == 0)
+        {
+            return;
+        }
+    }
+}
+
+int main(int argc, char const *argv[])
+{
+    int num = 0;
+    int opt = 0;
+
+    while (1)
+    {
+        printf("*****************\n1.开始猜数\n2.结束猜数\n*****************\n请选择：");
+        scanf("%d", &opt);
+        while (getchar() != '\n');
+
+        switch (opt)
+        {
+        case 1:
+            Guess_Game();
+            break;
+        case 2:
+            printf("我们下次见\n");
+            break;
+        default:
+            printf("请输入有效数字!\n");
+            break;
+        }
+    }
+
+    return 0;
+}
